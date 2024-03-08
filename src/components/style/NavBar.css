@@ -1,0 +1,22 @@
+.navBar {
+  -webkit-box-shadow: 18px 0px 6px -3px rgba(188, 188, 188, 0.48);
+  -moz-box-shadow: 18px 0px 6px -3px rgba(188, 188, 188, 0.48);
+  box-shadow: 18px 0px 6px -3px rgba(188, 188, 188, 0.48);
+  z-index: 99;
+  position: absolute;
+}
+.options-navbar :hover {
+  transition: all 0.5s;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(86, 86, 86, 1) 0%,
+    rgba(72, 72, 72, 1) 29%,
+    rgba(0, 0, 0, 1) 64%
+  );
+}
+
+.bx-x:hover {
+  transform: rotate(45deg);
+  scale: 1.2;
+}
