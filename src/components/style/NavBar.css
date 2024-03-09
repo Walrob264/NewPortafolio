@@ -1,22 +1,23 @@
-.navBar {
-  -webkit-box-shadow: 18px 0px 6px -3px rgba(188, 188, 188, 0.48);
-  -moz-box-shadow: 18px 0px 6px -3px rgba(188, 188, 188, 0.48);
-  box-shadow: 18px 0px 6px -3px rgba(188, 188, 188, 0.48);
-  z-index: 99;
-  position: absolute;
+.options-navbar {
+  display: flex;
+  color: white;
+  font-size: 1.5em;
+  justify-content: flex-start;
+  transition: all 0.5s; /* Transición suave en todas las propiedades */
 }
-.options-navbar :hover {
+
+.options-navbar:hover {
+  display: flex;
   transition: all 0.5s;
   color: white;
+  width: 100%;
+  justify-content: start;
   background: linear-gradient(
     90deg,
     rgba(86, 86, 86, 1) 0%,
     rgba(72, 72, 72, 1) 29%,
     rgba(0, 0, 0, 1) 64%
   );
-}
-
-.bx-x:hover {
-  transform: rotate(45deg);
-  scale: 1.2;
+  border-radius: 10px;
+  scale: 1.1;
 }

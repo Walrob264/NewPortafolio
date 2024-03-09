@@ -1,8 +1,15 @@
 import React from "react";
 function informationForMe() {
   return (
-    <div className="informationForMe" id="informationForMe">
-      <i>HOla</i>
+    <div
+      className="informationForMe"
+      id="informationForMe"
+      style={style.informationForMe}
+    >
+      <h1>
+        Me dicen Walter Medina, <br />
+        pero soy Desarrollador IOS y Web Full Stack{" "}
+      </h1>
     </div>
   );
 }
@@ -13,6 +20,9 @@ const style = {
   informationForMe: {
     height: "100vh",
     widht: "100%",
-    background: "red",
+    display: "flex",
+    color: "white",
+    flexDirection: "column",
+    justifyContent: "center",
   },
 };

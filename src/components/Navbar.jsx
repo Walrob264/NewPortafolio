@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import OptionsMenu from "../UI/OptionsMenu";
 
 function NavBar({ openMenu, setOpenMenu }) {
-  useEffect(() => {}, []);
-
   function handleMenu() {
     setOpenMenu(!openMenu);
   }
@@ -20,25 +18,8 @@ function NavBar({ openMenu, setOpenMenu }) {
           display: "flex",
           justifyContent: "flex-end",
         }}
-      >
-        <i
-          onClick={handleMenu}
-          className="bx bx-x"
-          style={{
-            color: "white",
-            fontSize: "50px",
-            cursor: "pointer",
-            padding: "0.2em",
-            transition: "all 0.5s",
-          }}
-        ></i>
-      </div>
-      <div
-        style={{
-          padding: "0em 1.5em",
-        }}
-      >
-        <OptionsMenu title={"Experience"} />
+      ></div>
+      <div style={styleNavBar.containerOptions}>
         <OptionsMenu title={"Works"} />
         <OptionsMenu title={"Stack"} />
         <OptionsMenu title={"Contact"} />
@@ -54,17 +35,31 @@ const styleNavBar = {
   navBar: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "display-start", // Esto debería ser "flex-start" en lugar de "display-start"
-    alignItems: "start",
+    justifyContent: "center",
+    alignItems: "center",
     background: "Black",
-    width: "30%",
+    width: "100%",
     height: "100%",
     transition: "all 1s",
     position: "absolute",
+    zIndex: "7",
   },
   navBarExit: {
-    transform: "translate(-110%, 0px)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
     transition: "all 1s",
+    transform: "translate(-110%, 0px)",
     position: "absolute",
+    height: "100%",
+    width: "100%",
+  },
+  containerOptions: {
+    height: "50%",
+    width: "40%",
+    display: "flex",
+    flexDirection: "column",
+    gap: "1.5em",
   },
 };

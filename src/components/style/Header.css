@@ -1,0 +1,14 @@
+.bx-menu:hover {
+  transform: rotate(90deg) scale(1.5);
+  transition: transform 0.5s;
+}
+.bx-home-alt-2:hover {
+  transform: rotate(360deg) scale(1.5);
+  transition: transform 0.5s;
+}
+
+.bx-menu::before {
+  transition: all 0.5s;
+  font-size: 2.5rem;
+  cursor: pointer;
+}

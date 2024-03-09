@@ -1,26 +1,17 @@
 import "../components/style/NavBar.css";
 export default function OptionsMenu({ title }) {
   return (
-    <div
-      className="options-navbar"
-      style={{
-        display: "flex",
-        color: "#c2c2c2",
-        fontSize: "1.5em",
-        transition: "all 0.5s",
-        cursor: "pointer",
-        padding: "0.5em 0em",
-        width: "60%",
-        justifyContent: "flex-start",
-      }}
-    >
-      <h1
+    <div className="options-navbar">
+      <i
         style={{
           cursor: "pointer",
+          fontSize: "3rem",
+          transition: "all 1s",
+          marginLeft: "0.2em",
         }}
       >
         {title}
-      </h1>
+      </i>
     </div>
   );
 }
