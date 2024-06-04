@@ -1,0 +1,11 @@
+{
+    "hogar": {
+        "presentacion": "Me dicen Walter Medina, \n pero soy Desarrollador IOS y Web Full Stack"
+    },
+    "barraNavegacion": {
+        "trabajos": "Trabajos",
+        "habilidades": "Habilidades",
+        "contacto": "Contacto",
+        "sobreMi": "Sobre mi"
+    }
+}

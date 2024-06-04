@@ -3,6 +3,11 @@ import "./App.css";
 import Header from "./components/Header";
 import InformationForMe from "./components/InformationForMe";
 import NavBar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import Works from "./components/Works";
+import Carousel from "./components/Stacks";
+import AboutMe from "./components/AboutMe";
+import Contact from "./components/Contact";
 
 function App() {
   const [menuActive, setMenuActive] = useState(false);
@@ -10,9 +15,18 @@ function App() {
   return (
     <div className="container" style={styleApp.container_body}>
       <Header openMenu={menuActive} setOpenMenu={setMenuActive} />
-      <div className="body" style={styleApp.body}>
-        <InformationForMe></InformationForMe>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          className="body"
+          style={styleApp.body}
+          element={<InformationForMe openMenu={menuActive} />}
+        ></Route>
+        <Route path="/works" element={<Works />} />
+        <Route path="/stacks" element={<Carousel />}></Route>
+        <Route path="/aboutMe" element={<AboutMe />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+      </Routes>
       <NavBar openMenu={menuActive} setOpenMenu={setMenuActive} />
     </div>
   );
@@ -26,6 +40,7 @@ const styleApp = {
     maxWidth: "100%",
     position: "relative",
     overflow: "hidden",
+    display: "flex",
   },
   body: {
     position: "absolute",

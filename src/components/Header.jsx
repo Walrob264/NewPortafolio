@@ -1,22 +1,54 @@
+import { useNavigate } from "react-router-dom";
 import "./style/Header.css";
+import { useTranslation } from "react-i18next";
 
 function header({ openMenu, setOpenMenu }) {
+  const navigate = useNavigate();
+  const [t, i18n] = useTranslation("global");
+
   function handleMenu() {
     setOpenMenu(!openMenu);
   }
   function redirectionHome() {
     if (openMenu == true) {
       setOpenMenu(!openMenu);
+      navigate(`/`);
     }
+    navigate(`/`);
   }
   return (
     <div style={style.header} className="header" id="Header">
-      <i
-        style={style.symbolHeader}
-        onClick={redirectionHome}
-        class="bx bx-home-alt-2"
-      ></i>
-      <i onClick={handleMenu} style={style.symbolHeader} class="bx bx-menu"></i>
+      <div style={style.symbolHeader}>
+        <i
+          onClick={redirectionHome}
+          className="bx bx-home-alt-2"
+          style={{ cursor: "pointer" }}
+        ></i>
+        {openMenu && <i>Walter M.</i>}
+      </div>
+
+      <div style={style.symbolHeader}>
+        <i
+          onClick={() =>
+            i18n.language == "en"
+              ? i18n.changeLanguage("es")
+              : i18n.changeLanguage("en")
+          }
+          style={{
+            paddingRight: "2em",
+            fontSize: "1.5rem",
+            cursor: "pointer",
+          }}
+          className="changeLenguage"
+        >
+          {i18n.language == "en" ? "Es" : "En"}
+        </i>
+        <i
+          onClick={handleMenu}
+          className="bx bx-menu"
+          style={{ cursor: "pointer" }}
+        ></i>
+      </div>
     </div>
   );
 }
@@ -36,8 +68,11 @@ const style = {
     paddingTop: "10em",
   },
   symbolHeader: {
+    display: "flex",
     margin: "5em",
     fontSize: "2.5rem",
-    cursor: "pointer",
+    gap: "1em",
+    justifyContent: "center",
+    alignItems: "center",
   },
 };

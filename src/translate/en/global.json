@@ -1,0 +1,11 @@
+{
+    "home": {
+        "presentation": "They call me Walter Medina. \n but I am an IOS and Full Stack Web Developer"
+    },
+    "navbar": {
+        "works": "Works",
+        "stack": "Stacks",
+        "contact": "Contact",
+        "aboutMe": "About Me"
+    }
+}

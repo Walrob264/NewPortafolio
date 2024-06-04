@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import OptionsMenu from "../UI/OptionsMenu";
+import { useTranslation } from "react-i18next";
 
 function NavBar({ openMenu, setOpenMenu }) {
+  const [t, i18n] = useTranslation("global");
   function handleMenu() {
     setOpenMenu(!openMenu);
   }
@@ -20,10 +22,42 @@ function NavBar({ openMenu, setOpenMenu }) {
         }}
       ></div>
       <div style={styleNavBar.containerOptions}>
-        <OptionsMenu title={"Works"} />
-        <OptionsMenu title={"Stack"} />
-        <OptionsMenu title={"Contact"} />
-        <OptionsMenu title={"Prueba"} />
+        <OptionsMenu
+          title={t(
+            i18n.language == "en" ? "navbar.works" : "barraNavegacion.trabajos"
+          )}
+          navigateRoutes={"works"}
+          openMenu={openMenu}
+          setOpenMenu={setOpenMenu}
+        />
+        <OptionsMenu
+          title={t(
+            i18n.language == "en"
+              ? "navbar.stack"
+              : "barraNavegacion.habilidades"
+          )}
+          navigateRoutes={"stacks"}
+          openMenu={openMenu}
+          setOpenMenu={setOpenMenu}
+        />
+        <OptionsMenu
+          title={t(
+            i18n.language == "en"
+              ? "navbar.contact"
+              : "barraNavegacion.contacto"
+          )}
+          navigateRoutes={"contact"}
+          openMenu={openMenu}
+          setOpenMenu={setOpenMenu}
+        />
+        <OptionsMenu
+          title={t(
+            i18n.language == "en" ? "navbar.aboutMe" : "barraNavegacion.sobreMi"
+          )}
+          navigateRoutes={"aboutMe"}
+          openMenu={openMenu}
+          setOpenMenu={setOpenMenu}
+        />
       </div>
     </div>
   );
