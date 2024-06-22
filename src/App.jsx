@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import InformationForMe from "./components/InformationForMe";
@@ -8,11 +8,30 @@ import Works from "./components/Works";
 import Carousel from "./components/Stacks";
 import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
+import Loading from "./components/Loading";
 
 function App() {
   const [menuActive, setMenuActive] = useState(false);
+  const [time, setTime] = useState(2);
+  const [loaded, setLoaded] = useState(false);
 
-  return (
+  const getTime = () => {
+    setTime((prevTime) => prevTime - 1);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getTime();
+    }, 1000);
+    if (time === 0) {
+      setLoaded(true);
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval);
+  }, [time]);
+
+  return loaded ? (
     <div className="container" style={styleApp.container_body}>
       <Header openMenu={menuActive} setOpenMenu={setMenuActive} />
       <Routes>
@@ -29,6 +48,8 @@ function App() {
       </Routes>
       <NavBar openMenu={menuActive} setOpenMenu={setMenuActive} />
     </div>
+  ) : (
+    <Loading />
   );
 }
 export default App;

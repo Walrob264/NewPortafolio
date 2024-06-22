@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import WorkSelect from "./WorkSelect";
 import { WorksArchive } from "../archives/workArchives";
+import { useTranslation } from "react-i18next";
+
 function Works() {
+  const [t, i18n] = useTranslation("global");
   const works = WorksArchive;
   const [work, setwork] = useState({});
   const [hoveredWork, setHoveredWork] = useState(null);
@@ -47,7 +50,7 @@ function Works() {
             fontWeight: "semiBold",
           }}
         >
-          <h1>Work</h1>
+          <h1>{t(i18n.language == "es" ? "trabajo.titulo" : "work.title")}</h1>
           <h1> {works.length}</h1>
         </div>
         <div style={style.line} />

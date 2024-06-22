@@ -7,5 +7,18 @@
         "stack": "Stacks",
         "contact": "Contact",
         "aboutMe": "About Me"
+    },
+    "presentation": {
+        "presentation": "I am a curious person, always open to new technologies. I excel at working in a team, and I am cheerful and happy. If you have a great project that needs something incredible, I am here to help."
+    },
+    "contact": {
+        "title": "Contact",
+        "socialMedia": "Social media"
+    },
+    "stack": {
+        "title": "My Stacks"
+    },
+    "work": {
+        "title": "Projects"
     }
 }

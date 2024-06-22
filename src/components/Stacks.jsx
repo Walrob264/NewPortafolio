@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../components/style/Stack.css";
+import { useTranslation } from "react-i18next";
 
 function Stacks() {
+  const [t, i18n] = useTranslation("global");
   const stacks = [
     { name: "React", icon: "bx bxl-react", color: "blue" },
     { name: "JavaScript", icon: "bx bxl-javascript", color: "yellow" },
@@ -68,7 +70,9 @@ function Stacks() {
             alignItems: "center",
           }}
         >
-          <h1>My Stacks</h1>
+          <h1>
+            {t(i18n.language == "es" ? "habilidades.titulo" : "stack.title")}
+          </h1>
 
           <div
             style={style.carouselContent}
@@ -165,6 +169,7 @@ const style = {
     borderRadius: "10px",
     backgroundColor: "white",
     border: "none",
+    cursor: "pointer",
   },
   activeButton: {
     width: "20px",
@@ -172,6 +177,7 @@ const style = {
     borderRadius: "10px",
     backgroundColor: "gray",
     border: "none",
+    cursor: "pointer",
   },
   buttonGroups: {
     width: "200px",

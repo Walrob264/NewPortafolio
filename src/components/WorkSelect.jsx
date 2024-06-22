@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 function WorkSelect({ work, isWorkSelect, setisWorkSelect }) {
   const workSelect = work;
   function hanldeWorkSelect() {
     setisWorkSelect(!isWorkSelect);
   }
+  const [t, i18n] = useTranslation("global");
+
   return (
     <>
       <div style={style.container}>
@@ -17,20 +21,42 @@ function WorkSelect({ work, isWorkSelect, setisWorkSelect }) {
         </div>
         <div style={style.body}>
           <div style={style.text}>
-            <p>{work.description}</p>
+            <p>{i18n.language == "es" ? work.descripcion : work.description}</p>
             <ul>
-              {work.characteristics.map((characteristic, index) => (
-                <li
-                  style={{
-                    padding: "0.2em",
-                    fontSize: "1.4em",
-                  }}
-                  key={index}
-                >
-                  <strong> {characteristic.title} </strong>{" "}
-                </li>
-              ))}
+              {i18n.language === "es"
+                ? work.caracteristicas.map((characteristic, index) => (
+                    <li
+                      style={{
+                        padding: "0.2em",
+                        fontSize: "1.4em",
+                      }}
+                      key={index}
+                    >
+                      <strong>{characteristic.title}</strong>
+                    </li>
+                  ))
+                : work.characteristics.map((characteristic, index) => (
+                    <li
+                      style={{
+                        padding: "0.2em",
+                        fontSize: "1.4em",
+                      }}
+                      key={index}
+                    >
+                      <strong>{characteristic.title}</strong>
+                    </li>
+                  ))}
             </ul>
+            <a
+              style={{
+                color: "white",
+                textDecoration: "none",
+              }}
+              href={work.url}
+              target="_blank"
+            >
+              {work.url != "" && `Link: ${work.url}`}
+            </a>
           </div>
           <div style={style.workImg}>
             <img
@@ -70,6 +96,7 @@ const style = {
     color: "white",
     margin: "1em",
     fontSize: "1.4em",
+    zIndex: "99",
   },
 
   iconClose: {

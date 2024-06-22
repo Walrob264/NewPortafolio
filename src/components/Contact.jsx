@@ -1,10 +1,15 @@
 import "../components/style/Contact.css";
+import { useTranslation } from "react-i18next";
+
 function Contact() {
+  const [t, i18n] = useTranslation("global");
   return (
     <>
       <div style={style.container}>
         <div style={style.header}>
-          <h1>Contact</h1>
+          <h1>
+            {t(i18n.language == "es" ? "contacto.titulo" : "contact.title")}
+          </h1>
         </div>
         <hr
           style={{
@@ -27,7 +32,13 @@ function Contact() {
             </div>
           </div>
           <div style={{ display: "flex" }}>
-            <h2>Redes sociales</h2>
+            <h2>
+              {t(
+                i18n.language == "es"
+                  ? "contacto.redesSociales"
+                  : "contact.socialMedia"
+              )}
+            </h2>
             <div style={style.containtContacts}></div>
             <div
               style={{

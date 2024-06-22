@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 function AboutMe() {
+  const [t, i18n] = useTranslation("global");
   return (
     <>
       <div style={style.container}>
@@ -16,9 +19,11 @@ function AboutMe() {
             Walter Medina
           </h1>
           <p style={{ fontSize: "1.5em" }}>
-            Soy una persona curiosa, siempre abierto a nuevas tecnologias, se me
-            da bien trabajar en equipo, alegre y contento. Si tienes un gran
-            proyecto que necesita algo increíble, estoy para ayudarle.
+            {t(
+              i18n.language == "es"
+                ? "presentacion.presentacion"
+                : "presentation.presentation"
+            )}
           </p>
         </div>
       </div>

@@ -7,5 +7,18 @@
         "habilidades": "Habilidades",
         "contacto": "Contacto",
         "sobreMi": "Sobre mi"
+    },
+    "presentacion": {
+        "presentacion": "Soy una persona curiosa, siempre abierto a nuevas tecnologias, se me da bien trabajar en equipo, alegre y contento. Si tienes un gran proyecto que necesita algo increíble, estoy para ayudarle."
+    },
+    "contacto": {
+        "titulo": "Contacto",
+        "redesSociales": "Redes sociales"
+    },
+    "habilidades": {
+        "titulo": "Mis Habilidades"
+    },
+    "trabajo": {
+        "titulo": "Trabajos"
     }
 }
