@@ -51,6 +51,8 @@ const style = {
     gap: "1em",
   },
   containtImg: {
+    minHeight: "450px",
+
     width: "30%",
     minWidth: "450px",
     overflow: "hidden",
